@@ -1,0 +1,56 @@
+*{box-sizing:border-box}
+:root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;background:#03060d;color:#f5f7fb}
+html,body{margin:0;min-width:320px;background:#03060d}
+body{padding:28px 12px 40px}
+.app{width:min(100%,720px);margin:0 auto}
+h1{margin:0 0 24px;text-align:center;color:#dceeff;font-size:clamp(25px,5vw,40px);font-weight:800;letter-spacing:-.035em;-webkit-text-stroke:.55px #287cff;text-shadow:0 0 4px #258aff,0 0 13px #1556c6}
+.loader-list{border:4px solid #ff8628;background:#0b1220;padding:14px 15px 18px;display:grid;grid-template-columns:1fr;gap:17px}
+.loader-card{border-radius:21px;padding:14px;background:#171e2d;border:1px solid #273044;box-shadow:0 5px 15px #0003;min-width:0}
+.preview{height:210px;border-radius:17px;background:#070f1d;display:grid;place-items:center;overflow:hidden;position:relative}
+.code-panel{margin-top:13px;min-height:175px;border-radius:16px;background:#070f1d;padding:18px 14px 37px;position:relative}
+.code-panel h2{font-size:16px;margin:0 0 12px;color:#f4f6fb;font-weight:750}
+.code-panel pre{margin:0;color:#a9c9f6;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.copy{position:absolute;right:10px;bottom:9px;background:#172b45;border:1px solid #2c4564;color:#c6e1ff;border-radius:6px;padding:5px 9px;font-size:10px;cursor:pointer}
+.copy:hover{background:#21466c}
+.flip-cube{width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,#ff9d22,#ff4b30);box-shadow:0 0 20px #ff5b2733;animation:flipCube 1.5s infinite ease-in-out}
+@keyframes flipCube{0%,100%{transform:rotateY(0) rotateX(0) scale(1)}25%{transform:rotateY(90deg) rotateX(25deg) scale(.9)}50%{transform:rotateY(180deg) rotateX(90deg) scale(.8)}75%{transform:rotateY(270deg) rotateX(25deg) scale(.9)}}
+.conic-spinner{width:60px;height:60px;border-radius:50%;background:conic-gradient(#22c55e,#06b6d4,#8b5cf6,#ec4899,#f97316,#22c55e);position:relative;animation:spin 1s linear infinite}
+.conic-spinner::after{content:"";position:absolute;inset:7px;background:#070f1d;border-radius:50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.double-ring{width:66px;height:66px;border:5px solid transparent;border-top-color:#38bdf8;border-bottom-color:#f472b6;border-radius:50%;position:relative;animation:spin 1s linear infinite}
+.double-ring i{position:absolute;inset:9px;border:4px solid transparent;border-left-color:#4ade80;border-right-color:#facc15;border-radius:50%;animation:spin 1.4s linear infinite reverse}
+.ripple{width:90px;height:90px;position:relative;display:grid;place-items:center}
+.ripple i{position:absolute;width:26px;height:26px;border:2px solid #60a5fa;border-radius:50%;animation:ripple 1.8s ease-out infinite}
+.ripple i:nth-child(2){animation-delay:.9s}
+@keyframes ripple{0%{transform:scale(.5);opacity:.9}100%{transform:scale(3.1);opacity:0}}
+.triangle-spinner{width:76px;height:76px;position:relative;animation:spin 1.8s linear infinite}
+.triangle-spinner i{position:absolute;width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:23px solid #facc15;left:25px;top:0;transform-origin:13px 38px}
+.triangle-spinner i:nth-child(2){transform:rotate(120deg);border-bottom-color:#22d3ee}
+.triangle-spinner i:nth-child(3){transform:rotate(240deg);border-bottom-color:#f472b6}
+.hourglass{width:70px;height:90px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:space-between;animation:hourglassTurn 1.6s ease-in-out infinite}
+.hourglass i{width:0;height:0;border-left:35px solid transparent;border-right:35px solid transparent;border-top:0;border-bottom:36px solid #f59e0b;position:relative}
+.hourglass i:nth-child(2){transform:rotate(180deg)}
+@keyframes hourglassTurn{0%,10%{transform:rotate(0)}45%,55%{transform:rotate(180deg)}90%,100%{transform:rotate(360deg)}}
+.pingpong{width:110px;height:24px;position:relative}
+.pingpong i{position:absolute;width:13px;height:13px;border-radius:50%;top:5px}
+.pingpong i:first-child{left:5px;background:#38bdf8;animation:ping 1s ease-in-out infinite alternate}
+.pingpong i:last-child{right:5px;background:#f43f5e;animation:pong 1s ease-in-out infinite alternate}
+@keyframes ping{to{transform:translateX(82px)}}
+@keyframes pong{to{transform:translateX(-82px)}}
+.diamond-orbit{width:88px;height:88px;position:relative;animation:spin 2s linear infinite}
+.diamond-orbit i{position:absolute;width:11px;height:11px;transform:rotate(45deg)}
+.diamond-orbit i:nth-child(1){top:0;left:38px;background:#8b5cf6}
+.diamond-orbit i:nth-child(2){right:0;top:38px;background:#facc15}
+.diamond-orbit i:nth-child(3){bottom:0;left:38px;background:#a855f7}
+.diamond-orbit i:nth-child(4){left:0;top:38px;background:#22d3ee}
+.typing{display:flex;align-items:center;gap:9px}
+.typing i{width:9px;height:9px;border-radius:50%;background:#d1d5db;animation:type .9s ease-in-out infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes type{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-9px);opacity:1}}
+footer{text-align:center;color:#667b97;font-size:9px;letter-spacing:.16em;margin:18px 0 0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#e8f5ff;color:#082039;padding:10px 15px;border-radius:8px;font-size:12px;transition:.2s;z-index:5}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:700px){.loader-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.preview{height:185px}.code-panel{min-height:165px}.loader-card{padding:12px}}
+@media(max-width:420px){body{padding:20px 8px 30px}h1{margin-bottom:18px}.loader-list{padding:10px;gap:13px;border-width:3px}.loader-card{padding:10px;border-radius:17px}.preview{height:185px}.code-panel{padding:15px 11px 36px;min-height:160px}.code-panel h2{font-size:14px}.code-panel pre{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
